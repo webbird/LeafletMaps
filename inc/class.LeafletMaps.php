@@ -28,7 +28,7 @@ if(!class_exists('LeafletMaps',false))
         protected static $type        = 'page';
         protected static $directory   = 'LeafletMaps';
         protected static $name        = 'LeafletMaps';
-        protected static $version     = '0.6';
+        protected static $version     = '1.0.1';
         protected static $description = "";
         protected static $author      = "BlackBird Webprogrammierung";
         protected static $guid        = "7741329D-EA1C-550C-4C89-B6291DA69179";
@@ -328,6 +328,26 @@ if(!class_exists('LeafletMaps',false))
             ob_end_clean();
             echo $content;
         }   // end function view()
+
+        /**
+         *
+         * @access public
+         * @return
+         **/
+        public static function uninstall()
+		{
+			foreach(array_values(array(
+                'mod_leafletmaps_markers',
+                'mod_leafletmaps_icons',
+                'mod_leafletmaps_settings',
+                'mod_leafletmaps_iconsets',
+            )) as $table) {
+                self::db()->query(sprintf(
+                    "DROP TABLE `%s$table`",
+                    TABLE_PREFIX
+                ));
+            }
+		}   // end function uninstall()
         
         /**
          *

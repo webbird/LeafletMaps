@@ -27,6 +27,7 @@ $LANG = array(
     'Active' => 'Aktiv',
     'Add / edit marker' => 'Marker hinzufügen / ändern',
     'An error occured while trying to delete the marker' => 'Beim Löschen des Markers ist ein Fehler aufgetreten',
+	'Cancel' => 'Abbrechen',
     'Default' => 'Standard',
     'Default icon' => 'Standard-Icon',
     'Default lang/lat' => 'Standard Lang / Lat',
@@ -35,6 +36,7 @@ $LANG = array(
     'Default map type' => 'Standard Kartentyp',
     'Default zoom' => 'Standard Zoom',
     'Delete' => 'Löschen',
+	'Description' => 'Beschreibung',
     'If you do not add a length (px, em, ...), px will be used' => 'Wird keine Maßeinheit angegeben (px, em, ...), wird automatisch px verwendet',
     'Map height' => 'Kartenhöhe',
     'Map width' => 'Kartenbreite',
@@ -50,8 +52,11 @@ $LANG = array(
     'Search' => 'Suchen',
     'Search results' => 'Suchergebnis',
     'Settings' => 'Einstellungen',
+	'Submit' => 'Speichern',
     'Take over' => 'Übernehmen',
     'The map is for visualization purposes only. Clicking on the plus/minus, moving the map etc. will not change any settings.' => 'Die Karte dient nur der Visualisierung. Das Anlicken der Plus/Minus-Symbole oder das Verschieben der Karte beeinflußt nicht die Einstellungen.',
     'The marker was deleted.' => 'Der Marker wurde gelöscht.',
     'Yes' => 'Ja',
+// WBCE only!
+	'Please notice: To show the map in the frontend, the code &lt;?php register_frontend_modfiles_body();?&gt; must be placed before the closing &lt;/body&gt; tag.' => 'Bitte beachten: damit die Karte im Frontend angezeigt wird, muss im Template der Code &lt;?php register_frontend_modfiles_body();?&gt; vor dem schließenden &lt;/body&gt;-Tag stehen.',
 );

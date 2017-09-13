@@ -22,7 +22,7 @@
  *
  */
 
-if(defined('WB_PATH') == false) { exit("Cannot access this file directly"); }
+if(!defined('WB_PATH') && !defined('CAT_PATH')) { exit("Cannot access this file directly"); }
 
 require_once WB_PATH.'/modules/LeafletMaps/inc/class.LeafletMaps.php';
 echo LeafletMaps::modify($section_id);

@@ -22,5 +22,7 @@
  *
  */
 
+if(!defined('WB_PATH') && !defined('CAT_PATH')) { exit("Cannot access this file directly"); }
+
 require_once dirname(__FILE__).'/inc/class.LeafletMaps.php';
 LeafletMaps::add();

@@ -3,80 +3,26 @@
  ******************************************************************************/
 
 @import url(css/leaflet.css);
+@import url(css/gridism.css);
 
-div.mod_leafletmaps label:not(.lm-label-right),div.mod_leafletmaps span.label{display:inline-block;width:10em;text-align:right;font-weight:600;margin:5px 15px;vertical-align:top;}
-div.mod_leafletmaps textarea{height:200px;width:25em;font-family: 'Courier New', Courier, 'Andale Mono', monospace;display:inline-block;}
-div.mod_leafletmaps input[type="text"],div.mod_leafletmaps select{width:30em;display:inline-block;}
+div.mod_leafletmaps label:not(.lm-label-right),div.mod_leafletmaps span.label{width:100%;}
+div.mod_leafletmaps textarea{height:200px;width:90%;font-family:'Courier New',Courier,'Andale Mono',monospace;display:inline-block;}
+div.mod_leafletmaps input[type="text"],div.mod_leafletmaps select{width:90%;}
 div.mod_leafletmaps input.small{width:80px;}
 div.mod_leafletmaps input[type="range"]{border:0;width:29em;display:inline;}
 div.mod_leafletmaps table{width:100%;}
 div.mod_leafletmaps td{border-bottom:1px solid #ddd;}
 div.mod_leafletmaps th{text-align:left;}
 div.mod_leafletmaps tr:nth-of-type(even),div.mod_leafletmaps th{background-color:#eee;}
-
-div.mod_leafletmaps div.lm_search {
-  background-color: white;
-  width: auto;
-  height: auto;
-  padding: 10px;
-}
-div.mod_leafletmaps div.lm_search input {
-  width: 200px;
-}
-div.mod_leafletmaps div.lm_results {
-  font-style: sans-serif;
-  color: black;
-  font-size:.75em;
-}
-
-.lm_map{height:25em;width:100%;margin-top:1em;}
-
-div.mod_leafletmaps ul.lm_nav {
-	position:relative;
-	float:left;
-	width:100%;
-	padding:0 0 0 1em;
-	margin:0 0 1.8em 0;
-	list-style:none;
-	line-height:1em;
-    border-bottom:1px solid #aaa;
-}
-
-div.mod_leafletmaps ul.lm_nav li {
-	float:left;
-	margin:0;
-	padding:0;
-}
-
-div.mod_leafletmaps ul.lm_nav a {
-	display:block;
-	color:#444;
-	text-decoration:none;
-	font-weight:bold;
-	background:#ddd;
-	margin:0;
-	padding:0.8em 1em;
-	border-left:1px solid #fff;
-	border-top:1px solid #fff;
-	border-right:1px solid #aaa;
-}
-
-div.mod_leafletmaps ul.lm_nav a:hover,
-div.mod_leafletmaps ul.lm_nav a:active,
-div.mod_leafletmaps ul.lm_nav a.current:link,
-div.mod_leafletmaps ul.lm_nav a.current:visited {
-	background:#28609b;
-    border-bottom:1px solid #28609b;
-    color:#fff;
-}
-
-div.mod_leafletmaps ul.lm_nav a.current:link,
-div.mod_leafletmaps ul.lm_nav a.current:visited {
-	position:relative;
-	z-index:102;
-}
-
-div.mod_leafletmaps select.fa_select{font-family: FontAwesome;}
-
+div.mod_leafletmaps div.lm_search{background-color:white;width:auto;height:auto;padding:10px;}
+div.mod_leafletmaps div.lm_search input{width:200px;}
+div.mod_leafletmaps div.lm_results{font-style:sans-serif;color:black;font-size:.75em;}
+div.mod_leafletmaps .lm_map{height:25em;width:100%;margin-top:1em;}
+div.mod_leafletmaps ul.lm_nav {position:relative;float:left;width:100%;padding:0 0 0 1em;margin:0 0 1.8em 0;list-style:none;line-height:1em;border-bottom:1px solid #aaa;}
+div.mod_leafletmaps ul.lm_nav li {float:left;margin:0;padding:0;}
+div.mod_leafletmaps ul.lm_nav a {display:block;color:#444;text-decoration:none;font-weight:bold;background:#ddd;margin:0;padding:0.8em 1em;border-left:1px solid #fff;border-top:1px solid #fff;border-right:1px solid #aaa;}
+div.mod_leafletmaps ul.lm_nav a:hover,div.mod_leafletmaps ul.lm_nav a:active,div.mod_leafletmaps ul.lm_nav a.current:link,div.mod_leafletmaps ul.lm_nav a.current:visited{background:#28609b;border-bottom:1px solid #28609b;color:#fff;}
+div.mod_leafletmaps ul.lm_nav a.current:link,div.mod_leafletmaps ul.lm_nav a.current:visited{position:relative;z-index:102;}
+div.mod_leafletmaps select.fa_select{font-family:FontAwesome !important;}
 div#fc_content_container div.mod_leafletmaps div.info{background-color:rgb(255,255,204);padding:5px;}
 div#fc_content_container div.mod_leafletmaps th{font-weight:900;}

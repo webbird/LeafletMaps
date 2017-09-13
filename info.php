@@ -22,12 +22,14 @@
  *
  */
 
+if(!defined('WB_PATH') && !defined('CAT_PATH')) { exit("Cannot access this file directly"); }
+
 $module_name = "LeafletMaps";
 $module_directory = "LeafletMaps";
 $module_type = "module";
 $module_function = "page";
 $module_description = "LeafletMaps";
-$module_version = "1.0";
+$module_version = "1.0.1";
 $module_platform = "1.x";
 $module_author = "BlackBird Webprogrammierung";
 $module_guid = "7741329D-EA1C-550C-4C89-B6291DA69179";

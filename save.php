@@ -39,6 +39,9 @@ if(!isset($section_id) || !is_numeric($section_id)) {
 
 // Include admin wrapper script
 require_once WB_PATH.'/modules/admin.php';
+if(!isset($admin) || !$admin->is_authenticated()) {
+    die();
+}
 
 require_once WB_PATH.'/modules/LeafletMaps/inc/class.LeafletMaps.php';
 echo LeafletMaps::modify($section_id);

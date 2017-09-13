@@ -22,6 +22,8 @@
  *
  */
 
+if(!defined('WB_PATH') && !defined('CAT_PATH')) { exit("Cannot access this file directly"); }
+
 if(defined('CAT_VERSION')) {
     $database = CAT_Helper_DB::getInstance();
     if(!defined('TABLE_PREFIX')) define('TABLE_PREFIX',$database::prefix());
@@ -99,6 +101,7 @@ $database->query(sprintf(
     	`longitude` DECIMAL(18,15) NOT NULL DEFAULT '0.000000000000000',
     	`url` TEXT NULL,
     	`description` TEXT NULL,
+        `glyph` VARCHAR(50) NULL DEFAULT NULL,
     	`active` INT(1) NOT NULL DEFAULT '1',
     	`pos` INT(10) NOT NULL DEFAULT '0',
     	PRIMARY KEY (`marker_id`),

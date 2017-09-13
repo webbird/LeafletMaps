@@ -1,4 +1,4 @@
-    <div style="float:right;width:33%;margin-left:5%;">
+    
         <div id="lm__<?php echo $section_id ?>_mapid" class="lm_map"></div>
         <div class="lm_search" data-id="<?php echo $section_id ?>">
             <input type="text" name="lm_addr" value="" placeholder="<?php echo lm_trans("f.e. '<city>, <street>'") ?>" />
@@ -9,4 +9,4 @@
                 <span></span>
             </div>
         </div>
-    </div>
+  

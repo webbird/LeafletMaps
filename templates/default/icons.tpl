@@ -1,7 +1,7 @@
 <div class="mod_leafletmaps">
     <?php include dirname(__FILE__).'/nav.tpl'; ?>
     <h3><?php echo lm_trans('Icons') ?></h3>
-    <div class="info"><?php echo lm_trans('Please note: Icons cannot be managed in this version of the LeafletMaps module.') ?></div>
+    <div class="info bot"><?php echo lm_trans('Please note: Icons cannot be managed in this version of the LeafletMaps module.') ?></div>
 <?php if(isset($icons) && is_array($icons) && count($icons)) : ?>
     <table>
         <thead>
@@ -28,6 +28,6 @@
         </tbody>
     </table>
 <?php else: ?>
-    <div class="info"><?php echo lm_trans('No icons yet') ?></div>
+    <div class="info bot"><?php echo lm_trans('No icons yet') ?></div>
 <?php endif; ?>
     <br /><br />
