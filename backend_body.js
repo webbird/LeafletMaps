@@ -17,13 +17,16 @@ $(function() {
 
     $('a.lm-marker-id').unbind('click').on('click', function(e) {
         e.preventDefault();
+        $('.fa_select').asIconPicker('clear');
         var section = $(this).data('section');
         var div = "lm__"+section+"_div";
         var map = lm_maps.div;
         var lat = $(this).parent().parent().find('td.marker-latlng').find('span.marker-lat').text().trim();
         var lng = $(this).parent().parent().find('td.marker-latlng').find('span.marker-lng').text().trim();
-        $('form[name="lm_modify_marker"] select[name="marker_glyph"] option:selected').prop("selected",false);
-        $('form[name="lm_modify_marker"] select[name="marker_glyph"] option[value="' + $(this).data('glyph') + '"]').prop("selected",true);
+        if($(this).data('glyph')!='') {
+            $('form[name="lm_modify_marker"] .asIconPicker-selected-icon').html('<i class="fa fa-'+$(this).data('glyph')+'" /> '+$(this).data('glyph'));
+            $('form[name="lm_modify_marker"] .asIconPicker-selected-icon').removeClass('asIconPicker-none-selected');
+        }
         $('form[name="lm_modify_marker"] select[name="marker_icon"] option:selected').prop("selected",false);
         $('form[name="lm_modify_marker"] select[name="marker_icon"] option[value="' + $(this).parent().parent().find('img').data('url') + '"]').prop("selected",true);
         $('form[name="lm_modify_marker"] img').attr('src', $(this).parent().parent().find('img').attr('src') );
@@ -51,5 +54,10 @@ $(function() {
         var selected = $('form[name="lm_modify_marker"] select[name="marker_icon"] option:nth(0)');
         var newsrc   = WB_URL + selected.data('baseurl') + '/' + selected.text().trim();
         img.attr('src', newsrc );
+        $('.fa_select').asIconPicker('clear');
+    });
+
+    $('form[name="lm_modify_marker"]').on('submit',function() {
+        $('input[name="marker_glyph"]').val($('span.asIconPicker-selected-icon i').attr('class').replace('fa ','').replace('fa-',''));
     });
 });

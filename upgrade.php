@@ -22,3 +22,12 @@
  *
  */
 
+$database->query(sprintf(
+    "ALTER TABLE `%smod_leafletmaps_markers` DROP COLUMN `page_id`;",
+    TABLE_PREFIX
+));
+$database->query(sprintf(
+    "ALTER TABLE `%smod_leafletmaps_settings`
+	ADD COLUMN `create_marker` INT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `defzoom`",
+    TABLE_PREFIX
+));

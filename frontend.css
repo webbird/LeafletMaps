@@ -1,3 +1,4 @@
+@import url(css/font-awesome.min.css);
 @import url(css/leaflet.css);
 .lm_map{height:25em;width:100%;margin-top:1em;}
 a[href=""]{display:none;}

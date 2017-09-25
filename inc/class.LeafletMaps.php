@@ -180,6 +180,10 @@ if(!class_exists('LeafletMaps',false))
             )) as $key ) {
                 $data[$key] = addslashes($_POST[$key]);
             }
+            $data['create_marker']
+                = (isset($_POST['create_marker']) && $_POST['create_marker']=='on')
+                ? 1
+                : 0;
 
             foreach(array_values(array(
                 'page_id', 'defzoom'
@@ -217,6 +221,27 @@ if(!class_exists('LeafletMaps',false))
                    exit;
                 }
             } else {
+                // check if we have to auto-create a marker
+                if($data['create_marker']==1) {
+                    $found   = false;
+                    $markers = self::markers($section_id,1);
+                    foreach($markers as $m) {
+                        if($m['latitude'] == $data['deflatitude'] && $m['longitude'] == $data['deflongitude']) {
+                            $found = true;
+                            break;
+                        }
+                    }
+                    if(!$found) {
+                        $_POST = array(
+                            'marker_name' => lm_trans('Map center'),
+                            'marker_icon' => 1,
+                            'marker_latitude' => $data['deflatitude'],
+                            'marker_longitude' => $data['deflongitude'],
+                            'page_id' => $page_id,
+                        );
+                        self::saveMarker($section_id);
+                    }
+                }
                 if(defined('CAT_VERSION')) {
                     CAT_Object::printMsg(lm_trans('Saved'),CAT_ADMIN_URL.'/pages/modify.php?page_id='.$page_id.'&do=set');
                 } else {
@@ -235,12 +260,6 @@ if(!class_exists('LeafletMaps',false))
         public static function saveMarker($section_id)
         {
             global $admin, $page_id, $baseUrl;
-
-            // check input data
-            $section_id = addslashes($_POST['section_id']);
-            if(!isset($section_id) || !is_numeric($section_id)) {
-                $admin->print_error(lm_trans('Invalid data!'), $js_back);
-            }
 
             foreach(array_values(array(
                 'marker_id', 'marker_name', 'marker_active', 'marker_icon', 'marker_glyph', 'marker_latitude', 'marker_longitude', 'marker_description', 'marker_url'

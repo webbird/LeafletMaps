@@ -78,7 +78,6 @@ $database->query(sprintf(
     	`icon_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
     	`class_id` INT(10) UNSIGNED NOT NULL DEFAULT '0',
     	`iconUrl` VARCHAR(50) NOT NULL DEFAULT '0',
-    	`glyph` VARCHAR(50) NULL DEFAULT NULL,
     	PRIMARY KEY (`icon_id`),
     	INDEX `FK_mod_leafletmaps_icons_mod_leafletmaps_iconclasses` (`class_id`),
     	CONSTRAINT `FK_%smod_leafletmaps_icons_mod_leafletmaps_iconclasses` FOREIGN KEY (`class_id`) REFERENCES `%smod_leafletmaps_iconsets` (`class_id`)
@@ -93,7 +92,6 @@ $database->query(sprintf(
 $database->query(sprintf(
     "CREATE TABLE `%smod_leafletmaps_markers` (
     	`section_id` INT(10) NOT NULL DEFAULT '0',
-    	`page_id` INT(10) NOT NULL DEFAULT '0',
     	`marker_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
     	`icon_id` INT(10) UNSIGNED NOT NULL DEFAULT '0',
     	`name` VARCHAR(255) NOT NULL,

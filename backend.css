@@ -2,8 +2,10 @@
  * LEAFLET
  ******************************************************************************/
 
+@import url(css/font-awesome.min.css);
 @import url(css/leaflet.css);
 @import url(css/gridism.css);
+@import url(css/asIconPicker.min.css); 
 
 div.mod_leafletmaps label:not(.lm-label-right),div.mod_leafletmaps span.label{width:100%;}
 div.mod_leafletmaps textarea{height:200px;width:90%;font-family:'Courier New',Courier,'Andale Mono',monospace;display:inline-block;}
@@ -26,3 +28,7 @@ div.mod_leafletmaps ul.lm_nav a.current:link,div.mod_leafletmaps ul.lm_nav a.cur
 div.mod_leafletmaps select.fa_select{font-family:FontAwesome !important;}
 div#fc_content_container div.mod_leafletmaps div.info{background-color:rgb(255,255,204);padding:5px;}
 div#fc_content_container div.mod_leafletmaps th{font-weight:900;}
+/* fixes */
+div.asIconPicker-wrapper{width:90%}
+.asIconPicker_with_search .asIconPicker-selector-search .asIconPicker-search-input{width:90%;height:auto;padding-right:20px;}
+.asIconPicker-icons-container{height:300px;}

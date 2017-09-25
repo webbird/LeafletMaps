@@ -22,6 +22,11 @@
 			<div class="unit one-third"><label for="deflongitude"><?php echo lm_trans('Default longitude') ?>:</label></div>
 			<div class="unit two-thirds"><input type="text" name="deflongitude" id="deflongitude" value="<?php echo $lm_settings['deflongitude'] ?>" class="lm_lng" /></div>
 		</div>
+
+        <div class="grid">
+			<div class="unit one-third"><label for="create_marker"><?php echo lm_trans('Create marker for this location') ?>:</label></div>
+			<div class="unit two-thirds"><input type="checkbox" name="create_marker" id="create_marker"<?php if($lm_settings['create_marker']==1): ?> checked="checked"<?php endif; ?> /></div>
+		</div>
 		
 		<div class="grid">
 			<div class="unit one-third"><label for="defzoom"><?php echo lm_trans('Default zoom') ?>:</label></div>

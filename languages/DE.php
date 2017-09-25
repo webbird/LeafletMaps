@@ -28,6 +28,7 @@ $LANG = array(
     'Add / edit marker' => 'Marker hinzufügen / ändern',
     'An error occured while trying to delete the marker' => 'Beim Löschen des Markers ist ein Fehler aufgetreten',
 	'Cancel' => 'Abbrechen',
+    'Create marker for this location' => 'Marker für diese Position anlegen',
     'Default' => 'Standard',
     'Default icon' => 'Standard-Icon',
     'Default lang/lat' => 'Standard Lang / Lat',

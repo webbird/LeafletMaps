@@ -18,7 +18,18 @@ $(function() {
         $.getScript( WB_URL + "/modules/LeafletMaps/js/leaflet.min.js", function( data, textStatus, jqxhr ) {
             $.getScript( WB_URL + "/modules/LeafletMaps/js/map.js", function( data, textStatus, jqxhr ) {
                 deferred_lm_initmap(lm_div,lm_lat,lm_lng,lm_zoom,lm_title);
-            })
+            });
+            $.getScript( WB_URL +"/modules/LeafletMaps/js/jquery-asTooltip.min.js", function( data, textStatus, jqxhr ) {
+                $.getScript( WB_URL +"/modules/LeafletMaps/js/jquery-asScrollbar.min.js", function( data, textStatus, jqxhr ) {
+                    $.getScript( WB_URL +"/modules/LeafletMaps/js/jquery-asIconPicker.min.js", function( data, textStatus, jqxhr ) {
+                        $('.fa_select').asIconPicker({handleLength: '5px'});
+                        $('.asIconPicker-list li').unbind('click').on('click', function (e) {
+                            var glyph = $(e.currentTarget).attr('title');
+                            $('input[name="marker_glyph"]').val(glyph);
+                        });
+                    });
+                });
+            });
         });
     } else {
         deferred_lm_initmap(lm_div,lm_lat,lm_lng,lm_zoom,lm_title);

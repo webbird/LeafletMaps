@@ -10,11 +10,11 @@ $(function() {
                 var map = lm_maps.div;
                 var icons = {};
                 var classes = {};
-//"iconUrl":"beige.png","id":"1","iconWidth":"63","iconHeight":"100","iconAnchorLeft":"31","iconAnchorBottom":"99","shadowUrl":"shadow.png","shadowWidth":"69","shadowHeight":"100","shadowAnchorLeft":"1","shadowAnchorBottom":"99","popupAnchorLeft":"0","popupAnchorBottom":"0"},{"name":"Essen","latitude":"51.457087000000000","longitude":"7.011429000000000","url":null,"description":"Essen, Stadtkern","iconUrl":"beige.png","id":"1","iconWidth":"63","iconHeight":"100","iconAnchorLeft":"31","iconAnchorBottom":"99","shadowUrl":"shadow.png","shadowWidth":"69","shadowHeight":"100","shadowAnchorLeft":"1","shadowAnchorBottom":"99","popupAnchorLeft":"0","popupAnchorBottom":"0"}]
                 for ( var i=0; i < data.length; ++i )
                 {
-                    var c_id = data[i].class_id;
-                    var i_id = data[i].icon_id;
+                    var c_id  = data[i].class_id;
+                    var i_id  = data[i].icon_id;
+                    var glyph = 'fw';
                     if(typeof classes["class_"+c_id] == 'undefined') {
                         classes["class_"+c_id] = L.Icon.Glyph.extend({
                             options: {
@@ -29,22 +29,19 @@ $(function() {
                             }
                         });
                     }
-                    if(typeof icons["icon_"+i_id] == 'undefined') {
-                        var glyph = 'fw';
-                        if(data[i]['glyph'] != '') {
-                            glyph = data[i]['glyph'];
-                        }
-                        icons["icon_"+i_id] = new classes["class_"+c_id]({
-                            iconUrl: WB_URL + data[i].baseUrl + "/" + data[i].iconUrl,
-                            glyph: glyph
-                        });
+                    if(data[i]['glyph'] != '') {
+                        glyph = data[i]['glyph'];
                     }
+                    icons["icon_"+i_id+"_"+i] = new classes["class_"+c_id]({
+                        iconUrl: WB_URL + data[i].baseUrl + "/" + data[i].iconUrl,
+                        glyph: glyph
+                    });
                     // create marker
                     var marker = L.marker([
                         data[i].latitude,
                         data[i].longitude
                     ], {
-                        icon: icons["icon_"+i_id]
+                        icon: icons["icon_"+i_id+"_"+i]
                     });
                     // bind popup
                     if(data[i]['popup'] != '') {
