@@ -28,7 +28,9 @@ $mod_headers = array(
             '/modules/LeafletMaps/js/leaflet.min.js',
             '/modules/LeafletMaps/js/Leaflet.Icon.Glyph.js',
             '/modules/LeafletMaps/js/map.js',
-            '/modules/LeafletMaps/js/jquery.fonticonpicker.min.js',
+            '/modules/LeafletMaps/js/jquery-asTooltip.min.js',
+            '/modules/LeafletMaps/js/jquery-asScrollbar.min.js',
+            '/modules/LeafletMaps/js/jquery-asIconPicker.min.js',
         ),
         'css'    => array(
             array('file'=>'/modules/LeafletMaps/css/leaflet.css')

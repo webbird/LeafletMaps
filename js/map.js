@@ -44,7 +44,6 @@ function lm_addr_search(section_id,value) {
 }
 
 function lm_addr_set(lat, lng, name, div) {
-console.log('lm_addr_set: ', lat, lng, name, div);
     var map = lm_maps.div;
     var location = new L.LatLng(lat, lng);
     map.panTo(location);

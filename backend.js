@@ -33,5 +33,10 @@ $(function() {
         });
     } else {
         deferred_lm_initmap(lm_div,lm_lat,lm_lng,lm_zoom,lm_title);
+        $('.fa_select').asIconPicker({handleLength: '5px'});
+        $('.asIconPicker-list li').unbind('click').on('click', function (e) {
+            var glyph = $(e.currentTarget).attr('title');
+            $('input[name="marker_glyph"]').val(glyph);
+        });
     }
 });
