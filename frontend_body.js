@@ -2,7 +2,12 @@ $(function() {
     "use strict";
 
     function lm_fill_map() {
-        deferred_lm_initmap(lm_div,lm_lat,lm_lng,lm_zoom,lm_title);
+        $('div.lm_map').each( function() {
+            var id = $(this).prop('id');
+            var d  = lm_data[id];
+            deferred_lm_initmap(d.div,d.lat,d.lng,d.zoom,d.title);
+        });
+        //deferred_lm_initmap(lm_div,lm_lat,lm_lng,lm_zoom,lm_title);
         $('div.lm_map.leaflet-container').each( function() {
             var section = $(this).data('section');
             $.get( WB_URL + "/modules/LeafletMaps/marker.php?section_id="+section, function( data, textStatus, jqxhr ) {

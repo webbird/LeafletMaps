@@ -25,7 +25,7 @@
 if(!defined('WB_PATH') && !defined('CAT_PATH')) { exit("Cannot access this file directly"); }
 
 if(defined('CAT_VERSION')) {
-    $database = CAT_Helper_DB::getInstance();
+    $database = \CAT\Helper\DB::getInstance();
     if(!defined('TABLE_PREFIX')) define('TABLE_PREFIX',$database::prefix());
 }
 
@@ -40,6 +40,7 @@ $database->query(sprintf(
         `deflatitude` decimal(18,15) NOT NULL DEFAULT '52.476000000000000',
         `deflongitude` decimal(18,15) NOT NULL DEFAULT '13.433300000000000',
         `defzoom` varchar(255) NOT NULL DEFAULT '5',
+        `create_marker` INT(1) UNSIGNED NOT NULL DEFAULT '0',
         PRIMARY KEY (`section_id`)
     )
     COLLATE='utf8mb4_general_ci'
@@ -80,7 +81,7 @@ $database->query(sprintf(
     	`iconUrl` VARCHAR(50) NOT NULL DEFAULT '0',
     	PRIMARY KEY (`icon_id`),
     	INDEX `FK_mod_leafletmaps_icons_mod_leafletmaps_iconclasses` (`class_id`),
-    	CONSTRAINT `FK_%smod_leafletmaps_icons_mod_leafletmaps_iconclasses` FOREIGN KEY (`class_id`) REFERENCES `%smod_leafletmaps_iconsets` (`class_id`)
+    	CONSTRAINT `FK_%smod_lmaps_icons_mod_lmaps_iconclasses` FOREIGN KEY (`class_id`) REFERENCES `%smod_leafletmaps_iconsets` (`class_id`)
     )
     COLLATE='utf8mb4_general_ci'
     ENGINE=InnoDB
@@ -103,8 +104,8 @@ $database->query(sprintf(
     	`active` INT(1) NOT NULL DEFAULT '1',
     	`pos` INT(10) NOT NULL DEFAULT '0',
     	PRIMARY KEY (`marker_id`),
-    	INDEX `FK_mod_leafletmaps_markers_mod_leafletmaps_icons` (`icon_id`),
-    	CONSTRAINT `FK_%smod_leafletmaps_markers_mod_leafletmaps_icons` FOREIGN KEY (`icon_id`) REFERENCES `%smod_leafletmaps_icons` (`icon_id`)
+    	INDEX `FK_mod_lmaps_markers_mod_lmaps_icons` (`icon_id`),
+    	CONSTRAINT `FK_%smod_lmaps_markers_mod_lmaps_icons` FOREIGN KEY (`icon_id`) REFERENCES `%smod_leafletmaps_icons` (`icon_id`)
     )
     COLLATE='utf8mb4_general_ci'
     ENGINE=InnoDB

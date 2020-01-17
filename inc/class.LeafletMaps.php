@@ -101,7 +101,7 @@ if(!class_exists('LeafletMaps',false))
         {
             global $page_id, $baseUrl;
             if(defined('CAT_VERSION') && version_compare(CAT_VERSION,'2.0','>=')) {
-                $page_id = CAT_Sections::getPageForSection($section_id);
+                $page_id = \CAT\Sections::getPageForSection($section_id);
                 $baseUrl = CAT_ADMIN_URL.'/page/edit/'.$page_id;
                 $saveUrl = CAT_ADMIN_URL.'/page/save/'.$page_id;
                 $delim   = '?';
@@ -471,7 +471,7 @@ if(!class_exists('LeafletMaps',false))
             global $database;
             if(!is_object(self::$db)) {
                 if(defined('CAT_VERSION')) {
-                    $database = CAT_Helper_DB::getInstance();
+                    $database = \CAT\Helper\DB::getInstance();
                     if(!defined('TABLE_PREFIX')) define('TABLE_PREFIX',$database::prefix());
                 }
                 self::$db = $database;

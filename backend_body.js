@@ -58,6 +58,12 @@ $(function() {
     });
 
     $('form[name="lm_modify_marker"]').on('submit',function() {
-        $('input[name="marker_glyph"]').val($('span.asIconPicker-selected-icon i').attr('class').replace('fa ','').replace('fa-',''));
+        var glyph = $('span.asIconPicker-selected-icon:not(.asIconPicker-none-selected) i');
+        if(glyph.length) {
+            glyph = glyph.attr('class').replace('fa ','').replace('fa-','');
+        } else {
+            glyph = "";
+        }
+        $('input[name="marker_glyph"]').val(glyph);
     });
 });
